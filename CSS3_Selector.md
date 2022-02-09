@@ -199,7 +199,7 @@ img[src$=gif] { border: 3px solid blue; }
 
 ## 🔵 후손 선택자와 자손 선택자
 
-<img src="/sources/자손후손.png" width="300px">
+<img src="/sources/자손후손.png" width="600px">
 
 ```html
 <div>
