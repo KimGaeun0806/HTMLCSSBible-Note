@@ -178,7 +178,7 @@ div {
 } 
 ```
 
-<img src="/sources/마진패딩.png" width="600px">
+<img src="/sources/마진패딩.png" width="300px">
 
 - 태그 전체 너비 = width + 2 x (margin + border + padding)
 태그 전체 높이 = height + 2 x (margin + border + padding)
