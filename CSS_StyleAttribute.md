@@ -6,7 +6,7 @@
 - [박스 속성](#-박스-속성)
 - [테두리 속성](#-테두리-속성)
 - [배경 속성](#-배경-속성)
-- [폰트 속성]
+- [폰트 속성](#-폰트-속성)
 - [위치 속성]
 - [float 속성]
 - [clear:both를 사용한 레이아웃]
@@ -293,3 +293,196 @@ div:last-child {
 - 특정 태그의 배경 이미지 또는 색상 지정
 
 ### ◻️ background-image 속성
+
+- 배경에 넣을 그림을 지정하는 속성으로,URL 단위나 그레이디언트 등을 입력
+
+```css
+body {
+	background-image: url('BackgroundFront.png'), url('BackgroundBack.png');
+	/* 여러 개의 배경을 적용하면 왼쪽에 위치한 이미지가 앞으로 나옴. */
+}
+```
+
+<br />
+
+### ◻️ background-size 속성
+
+- 1개 또는 2개의 크기 단위를 적용하며 각각 너비와 높이 의미
+
+```css
+body {
+	background-image: url('BackgroundFront.png'), url('BackgroundBack.png');
+	background-size: 100% 250px; /* 너비는 꽉 참, 높이는 250픽셀 */
+}
+```
+
+- 띄어쓰기가 아닌 쉼표로 구분하면, 각각의 배경에 서로 다른 크기를 적용하는 것
+
+```css
+/* BackgroundFront.png 파일은 너비가 100%, BackgroundBack.png 파일은 너비가 200% */
+body {
+	background-image: url('BackgroundFront.png'), url('BackgroundBack.png');
+	background-size: 100%, 200%;
+}
+```
+
+- **background-size 속성의 키워드** → background-size 속성에 contain 키워드를 적용하면 너비를 100%로 적용한 것과 같은 효과. cover 키워드를 적용하면 높이를 100%로 적용한 것과 같은 효과.
+
+<br />
+
+### ◻️ background-repeat 속성
+
+- repeat 키워드를 적용하면 이미지가 패턴을 이루고, repeat-x키워드를 적용하면 x축 방향으로 이미지가 반복되며 repeat-y 키워드를 적용하면 y축 방향으로 이미지 반복
+- background-repeat 속성의 기본 키워드는 repeat임
+
+```css
+body {
+	background-image: url('BackgroundFront.png'), url('BackgroundBack.png');
+	background-size: 100%;
+	background-repeat: no-repeat; /* 반복 없이 배경 이미지 적용 */
+}
+```
+
+<br />
+
+### ◻️ background-attachment 속성
+
+- 배경 이미지를 어떠한 방식으로 화면에 붙일 것인지 지정하는 스타일 속성
+- background-attachment 속성의 기본 키워드는 scroll 키워드 → 화면 스크롤에 따라 배경 이미지가 함께 이동함
+
+```css
+body {
+	background-color: #E7E7E8;
+	background-image: url('BackgroundFront.png'), url('BackgroundBack.png');
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed; /* 스크롤을 내려도 배경 이미지가 고정됨 */
+}
+```
+
+<br />
+
+### ◻️ background-position 속성
+
+- background-position: 키워드;
+background-position: x축위치;
+background-position: x축위치 y축위치; 
+와 같은 형태로 값을 적용
+
+```css
+body {
+	background-color: #E7E7E8;
+	background-image: url('BackgroundFront.png'), url('BackgroundBack.png');
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed; 
+	background-position: bottom; /* 배경 이미지가 아래에 붙음 */
+}
+
+body {
+	background-color: #E7E7E8;
+	background-image: url('BackgroundFront.png'), url('BackgroundBack.png');
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed; 
+	background-position: 0px 50%; /* x축 위치 0픽셀, y축 위치 50% */
+}
+```
+
+<br />
+
+## 🔵 폰트 속성
+
+### ◻️ font-size 속성
+
+- 글자의 크기 지정
+
+```css
+.a { font-size: 32px; }
+.b { font-size: 2em; }
+.c { font-size: large; }
+.d { font-size: small; }
+```
+
+<br />
+
+### ◻️ font-family 속성
+
+- 폰트 지정
+- 사용자에게는 폰트가 설치되지 않았을 수도 있으므로 font-family 속성 여러 개 사용함
+- font-family 속성의 가장 마지막 폰트에는 Serif 폰트(명조체), Sans-serif 폰트(고딕체), Mono space 폰트(고정폭 글꼴) 적용 (generic-family)
+
+```css
+.font_arial { font-family: '없는 폰트', Arial; }
+.font_roman { font-family: 'Times New Roman', Arial; }
+/* 한 단어로 이루어진 폰트는 따옴표를 사용하지 않지만, 두 단어 이상으로 이루어진 폰트는 따옴표 사용 */
+```
+
+<br />
+
+### ◻️ font-style 속성과 font-weight  속성
+
+- 폰트의 기울기와 두께 조정
+
+```css
+.font_italic { font-style: italic; } /* 기울어짐 */
+.font_bold { font-weight: bold; } /* 굵어짐 */
+
+/* 일반 폰트 두께는 400, 두꺼운 폰트 두께는 700 */
+```
+
+<br />
+
+### ◻️ line-height 속성
+
+- 글자의 높이 지정
+- 글자를 수직 중앙 정렬할 때 자주 사용
+
+```css
+.font_center { text-align: center; } /* 글자 수평 중앙 정렬 */
+
+.button {
+	width: 150px;
+	height: 70px;
+	background-color: #FFFFFF;
+	border: 10px solid #000000;
+}
+
+.button > a {
+	display: block;
+	line-height: 70px; /* 글자를 감싸는 박스의 높이와 같은 크기의 line-height 속성 사용 -> 글자 수직 중앙 정렬*/
+}
+```
+
+```html
+<div class="button">
+	<a href="#" class="font_center">Click</a>
+</div>
+```
+
+<br />
+
+### ◻️ text-align 속성
+
+- 글자 정렬
+
+```css
+.font_center { text_align: center; } /* 중앙 정렬 */
+.font_right { text_align: right; } /* 오른쪽 정렬 */
+```
+
+- **text-align 속성과 영역** → span 태그는 text-align 속성을 적용할 수 없음. span 태그는 inline 형식을 가지므로 너비가 존재하지 않기에 중앙의 개념이 없기 때문.
+
+<br />
+
+### ◻️ text-decoration 속성
+
+```css
+a { text-decoration: none; } /* href 속성을 사용했을 때 생기는 글자의 밑줄 제거 */
+```
+
+```html
+<h1>
+	<a href="#">Orange Color Orange</a>
+</h1>
+```
